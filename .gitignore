@@ -1,0 +1,10 @@
+data/
+supplied_data/
+.env
+.venv/
+__pycache__/
+*.safetensors
+*.zip
+adapter/
+checkpoints/
+private_*
