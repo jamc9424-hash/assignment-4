@@ -14,7 +14,7 @@ Training uses 900 reviews (300 per class), validation reserves 300 reviews and i
 
 The supplied train/validation/test files passed an exact audit against the authoritative source: 900/300/300 rows, required class balances, unique IDs, disjoint splits, matching contents, and the prescribed training shuffle. See `data_audit.json`. The same checks and actual prepared-training-record checks were executed successfully in the live Colab notebook.
 
-`assignment4_comparison.ipynb` is a **source snapshot**, not the final executed submission. Runtime inspection currently reports CPU only; T4 selection is required before training. Recommended model: Qwen2.5-1.5B-Instruct with 4-bit QLoRA. Prompt and training choices are pending discussion. No training or test results are claimed. Final submission files will only be marked complete after execution, saved-adapter reload, prediction alignment checks, and output validation.
+`assignment4_comparison.ipynb` is an earlier **source snapshot**, not the final executed submission. The subsequently approved model is **Qwen2.5-3B-Instruct** with 4-bit QLoRA, satisfying the assignment's 2–5B starting-model requirement. The approved settings, instruction, and training-only demonstration IDs are recorded in `experiment_config.json`; they supersede the starter notebook's pending-choice text. The user selected a T4 runtime, but its hardware and memory use have not yet been verified by an executed runtime check. No training or test results are claimed. Final submission files will only be marked complete after execution, saved-adapter reload, prediction alignment checks, and output validation.
 
 ## References
 
