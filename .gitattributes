@@ -1,0 +1,6 @@
+# Preserve exact artifact bytes so recorded SHA-256 checks survive Git transfers.
+*.ipynb -text
+*.jsonl -text
+evidence/** -text
+*.zip -text
+*.safetensors -text
