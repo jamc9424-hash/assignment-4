@@ -5,7 +5,8 @@
   "hosted_base_url": "http://dobolyi.com:9001/v1",
   "credential_source": "runtime_secret_only",
   "target_gpu": "Tesla T4 16 GB",
-  "t4_verified": false,
+  "t4_hardware_verified": true,
+  "t4_full_run_verified": false,
   "training": {
     "method": "Unsloth QLoRA",
     "load_in_4bit": true,
@@ -20,6 +21,10 @@
     "learning_rate": 0.0002,
     "num_train_epochs": 2,
     "seed": 43,
+    "warmup_steps": 6,
+    "weight_decay": 0.01,
+    "optimizer": "adamw_8bit",
+    "lr_scheduler_type": "linear",
     "gradient_checkpointing": true,
     "loss": "assistant_response_only",
     "validation_used": false

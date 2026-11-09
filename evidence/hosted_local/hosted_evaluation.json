@@ -1,0 +1,90 @@
+{
+  "status": "two hosted baselines complete; fine-tuned comparison pending",
+  "metrics": [
+    {
+      "method": "zero_shot",
+      "balanced_accuracy": 0.7566666666666667,
+      "macro_f1": 0.7311529740101168,
+      "correct": 227,
+      "incorrect": 73,
+      "invalid": 0
+    },
+    {
+      "method": "few_shot",
+      "balanced_accuracy": 0.7666666666666666,
+      "macro_f1": 0.7492151654610444,
+      "correct": 230,
+      "incorrect": 70,
+      "invalid": 0
+    }
+  ],
+  "per_class": [
+    {
+      "method": "zero_shot",
+      "class": "POSITIVE",
+      "precision": 0.8518518518518519,
+      "recall": 0.92,
+      "f1": 0.8846153846153846,
+      "support": 100
+    },
+    {
+      "method": "zero_shot",
+      "class": "NEUTRAL",
+      "precision": 0.8085106382978723,
+      "recall": 0.38,
+      "f1": 0.5170068027210885,
+      "support": 100
+    },
+    {
+      "method": "zero_shot",
+      "class": "NEGATIVE",
+      "precision": 0.6689655172413793,
+      "recall": 0.97,
+      "f1": 0.7918367346938775,
+      "support": 100
+    },
+    {
+      "method": "few_shot",
+      "class": "POSITIVE",
+      "precision": 0.875,
+      "recall": 0.91,
+      "f1": 0.8921568627450981,
+      "support": 100
+    },
+    {
+      "method": "few_shot",
+      "class": "NEUTRAL",
+      "precision": 0.7719298245614035,
+      "recall": 0.44,
+      "f1": 0.5605095541401274,
+      "support": 100
+    },
+    {
+      "method": "few_shot",
+      "class": "NEGATIVE",
+      "precision": 0.6834532374100719,
+      "recall": 0.95,
+      "f1": 0.7949790794979079,
+      "support": 100
+    }
+  ],
+  "mcnemar": {
+    "A": "zero_shot",
+    "B": "few_shot",
+    "both_correct": 223,
+    "A_only_correct": 4,
+    "B_only_correct": 7,
+    "both_wrong": 66,
+    "exact_p_value": 0.548828125
+  },
+  "prediction_files": {
+    "zero_shot": {
+      "sha256": "4d20b98d4733b0cede9c8ba26c172071cc05cc7bb964550726087582c71b19b4"
+    },
+    "few_shot": {
+      "sha256": "4b2dd1d2a588b2abd898de3ce5401a5bccc89e253e89081aeb3bf2c3d0ffd94c"
+    }
+  },
+  "test_fingerprint": "1ffb05d5497fd99b01c1b2c31fd027fa4b86fb8cbe5c18db6cb1f3e804f3611f",
+  "execution_location": "local Windows computer; class endpoint performs model inference"
+}
