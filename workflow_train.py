@@ -6,7 +6,7 @@ training_args = TrainingArguments(
     gradient_accumulation_steps=8, learning_rate=2e-4, num_train_epochs=2,
     warmup_steps=6, weight_decay=0.01, lr_scheduler_type="linear",
     fp16=True, bf16=False, optim="adamw_8bit", logging_steps=10,
-    save_strategy="no", eval_strategy="no", seed=43, data_seed=43,
+    save_strategy="epoch", save_total_limit=2, eval_strategy="no", seed=43, data_seed=43,
     report_to="none", remove_unused_columns=False, dataloader_num_workers=0)
 trainer = Trainer(model=model, args=training_args, train_dataset=train_dataset,
                   data_collator=collator)
@@ -19,6 +19,8 @@ torch.cuda.reset_peak_memory_stats()
 torch.cuda.synchronize()
 started = time.perf_counter()
 train_result = trainer.train()
+assert trainer.state.global_step == 114, trainer.state.global_step
+assert abs(trainer.state.epoch - 2.0) < 1e-6, trainer.state.epoch
 torch.cuda.synchronize()
 training_seconds = time.perf_counter() - started
 training_run = {
@@ -27,7 +29,8 @@ training_run = {
  "training_seconds":training_seconds,
  "peak_allocated_gib":torch.cuda.max_memory_allocated()/2**30,
  "peak_reserved_gib":torch.cuda.max_memory_reserved()/2**30,
- "train_rows":900, "epochs":2, "seed":43, "learning_rate":2e-4,
+ "train_rows":900, "epochs":2, "completed_optimizer_steps":trainer.state.global_step, "seed":43, "learning_rate":2e-4,
+ "warmup_steps":6, "weight_decay":0.01, "optimizer":"adamw_8bit", "gradient_checkpointing":"unsloth",
  "batch_size":2, "gradient_accumulation_steps":8, "max_seq_length":MAX_SEQ_LENGTH,
  "lora_rank":16, "lora_alpha":32, "lora_dropout":0,
  "packages":package_versions, "metrics":train_result.metrics,
@@ -55,3 +58,7 @@ with zipfile.ZipFile(ADAPTER_ZIP, "w", zipfile.ZIP_DEFLATED) as z:
 with zipfile.ZipFile(ADAPTER_ZIP) as z:
     assert set(z.namelist()) == {"adapter_model.safetensors", "adapter_config.json"}
 print("Saved and verified adapter ZIP:", ADAPTER_ZIP.name)
+
+# Back up the completed adapter immediately; runtime disks are temporary.
+from google.colab import files
+files.download(str(ADAPTER_ZIP))

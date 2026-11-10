@@ -1,0 +1,13 @@
+{
+  "unsloth": "2026.11.3",
+  "unsloth_zoo": "2026.11.3",
+  "torch": "2.14.1+cu130",
+  "transformers": "5.17.0",
+  "peft": "0.21.2",
+  "trl": "1.15.0",
+  "datasets": "4.8.5",
+  "bitsandbytes": "0.50.2",
+  "accelerate": "1.15.0",
+  "statsmodels": "0.15.0",
+  "scikit-learn": "1.6.1"
+}

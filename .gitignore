@@ -8,3 +8,4 @@ __pycache__/
 adapter/
 checkpoints/
 private_*
+working_snapshot.ipynb

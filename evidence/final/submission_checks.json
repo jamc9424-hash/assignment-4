@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "predictions": 300,
+  "prompt_examples": 3,
+  "zip_entries": [
+    "adapter_config.json",
+    "adapter_model.safetensors"
+  ],
+  "submitted_adapter_matches_inference": true,
+  "reported_prediction_hash_matches": true
+}

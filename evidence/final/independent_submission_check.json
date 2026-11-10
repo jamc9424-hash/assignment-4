@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "predictions": 300,
+  "prompt_examples": 3,
+  "adapter_tensor_count": 504,
+  "all_notebook_code_executed": true,
+  "no_notebook_errors": true,
+  "adapter_hashes": {
+    "adapter_model.safetensors": "0b9e3ff5515155e2d70b3a3720150de06d0e05e95049e544771b5e865b478953",
+    "adapter_config.json": "ec710cec386882ab3886eb0cea075eb64b1c42a8c8d57d1c31a56c34a21a01f7"
+  },
+  "files": {
+    "adapter.zip": "7add9abc03e361cc14eab2284d679073167dee0fb215f2f910c85b27f021f5dc",
+    "assignment4_comparison.ipynb": "3db3d4c834205f6258311718d09d34e15375a16f6d32d8beeaef1a8bcd9db0d5",
+    "fine_tuned_predictions.jsonl": "e8495db64ad1a358c0724368efca022c1037858962c0375a32bf3640d688fff4",
+    "prompt_examples.jsonl": "33a4f21eb9c88750cd45b6ac6471bcf0455b1651dca903a6f47ecfa56237dda4"
+  }
+}
