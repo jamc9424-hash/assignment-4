@@ -1,6 +1,6 @@
 {
+  "adapter.zip": "7add9abc03e361cc14eab2284d679073167dee0fb215f2f910c85b27f021f5dc",
+  "assignment4_comparison.ipynb": "4c38b786dc708cbbff8351805ec31bdeb6dfe5aef7a1338b390f0cbc9c18a451",
   "fine_tuned_predictions.jsonl": "e8495db64ad1a358c0724368efca022c1037858962c0375a32bf3640d688fff4",
-  "assignment4_comparison.ipynb": "3db3d4c834205f6258311718d09d34e15375a16f6d32d8beeaef1a8bcd9db0d5",
-  "prompt_examples.jsonl": "33a4f21eb9c88750cd45b6ac6471bcf0455b1651dca903a6f47ecfa56237dda4",
-  "adapter.zip": "7add9abc03e361cc14eab2284d679073167dee0fb215f2f910c85b27f021f5dc"
+  "prompt_examples.jsonl": "33a4f21eb9c88750cd45b6ac6471bcf0455b1651dca903a6f47ecfa56237dda4"
 }
